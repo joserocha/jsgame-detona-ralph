@@ -1,0 +1,200 @@
+@import url('reset.css');
+@import url('button.css');
+
+
+/* general */
+
+body {
+    background-color: #000000;
+    height: 100vh;
+}
+
+
+/* header part */
+
+header {
+    width: 100%;
+    height: 15vh;
+    background: #000000;
+    -webkit-box-shadow: inset 0px -2px 0px 0px rgba(255,255,0,1);
+    -moz-box-shadow: inset 0px -2px 0px 0px rgba(255,255,0,1);
+    box-shadow: inset 0px -2px 0px 0px rgba(255,255,0,1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+    header section:nth-child(1) h2:nth-child(2),
+    header section:nth-child(2) h2:nth-child(2) {
+        margin-top: 1rem;
+    }
+
+
+/* main part */
+
+main {
+    padding-top: 2rem;
+    height: 85vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/wall.png");
+}
+
+
+    /* main - show result */
+
+    main #result {
+        width: 40rem;
+        height: 15rem;
+        background-color: #ecec8f;
+        border-radius: 25px;
+        filter: drop-shadow(10px 10px 10px #000000);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+        main #result #text-score {
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+            main #result #text-score-result {
+                color: #FF0000;
+                font-size: 4rem;
+            }
+
+        main #result .btn-restart {
+            margin-top: 1.5rem;
+        }
+    
+            main #result .btn-restart button {
+                position: relative;
+                border: none;
+                background: transparent;
+                padding: 0;
+                cursor: pointer;
+                outline-offset: 4px;
+                transition: filter 250ms;
+                user-select: none;
+                touch-action: manipulation;
+            }
+
+                main #result .btn-restart button .btn-restart-shadow {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    background: hsl(0deg 0% 0% / 0.25);
+                    will-change: transform;
+                    transform: translateY(2px);
+                    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+                }
+
+                main #result .btn-restart button .btn-restart-edge {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    background: linear-gradient(to left,
+                                            hsl(340deg 100% 16%) 0%,
+                                            hsl(340deg 100% 32%) 8%,
+                                            hsl(340deg 100% 32%) 92%,
+                                            hsl(340deg 100% 16%) 100%);
+                }
+
+                main #result .btn-restart button .btn-restart-front {
+                    display: block;
+                    position: relative;
+                    padding: 12px 27px;
+                    border-radius: 12px;
+                    font-size: 1.1rem;
+                    color: rgb(0, 0, 0);
+                    background: hsl(144deg 91.31% 56.4%);
+                    will-change: transform;
+                    transform: translateY(-4px);
+                    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+                }
+
+                @media (min-width: 768px) {
+                    main #result .btn-restart button .btn-restart-front {
+                        font-size: 1.25rem;
+                        padding: 12px 42px;
+                    }
+                }
+
+            main #result .btn-restart button:hover {
+                filter: brightness(110%);
+                -webkit-filter: brightness(110%);
+            }
+  
+                main #result .btn-restart button:hover .btn-restart-front {
+                    transform: translateY(-6px);
+                    transition:
+                    transform
+                    250ms
+                    cubic-bezier(.3, .7, .4, 1.5);
+                }
+  
+                main #result .btn-restart button:active .btn-restart-front {
+                    transform: translateY(-2px);
+                    transition: transform 34ms;
+                }
+  
+                main #result .btn-restart button:hover .btn-restart-shadow {
+                    transform: translateY(4px);
+                    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+                }
+  
+                main #result .btn-restart button:active .btn-restart-shadow {
+                    transform: translateY(1px);
+                    transition: transform 34ms;
+                }
+  
+                main #result .btn-restart button:focus:not(:focus-visible) {
+                    outline: none;
+                }
+
+
+    /* main - show panel */
+
+    main .panel-row .square {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000000;
+        background: #1aeaa5;
+    }
+
+    main .panel-row .enemy {
+        background-image: url("../images/ralph.png");
+        background-size: cover;
+    }
+
+    /* main #result,
+    main #btn-start,
+    main #btn-restart {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    main #result {
+
+    }
+
+        main #result p {
+            color: #000000;
+            background-color: hsl(165, 8%, 69%);;
+            width: 350px;
+            height: 50px;
+            line-height: 50px;
+            vertical-align: baseline;
+            border-radius: 10px;
+        } */
